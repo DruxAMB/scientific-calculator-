@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css" />
+    <title>Larva JavaScript ass7 - Scientific Calculator</title>
+  </head>
+  <body>
+    <div class="container bg-primary mt-5">
+      <div class="header d-flex justify-content-between">
+        <div class="header-text">
+          <div class="h5 fw-bold text-white m-0">DruxAMB</div>
+          <p class="fw-bold text-white m-0">fx-300ES PLUS</p>
+          <p class="fw-bold text-white m-0">NATURAL V.P.A.M</p>
+        </div>
+        <div class="solar"></div>
+      </div>
+      <div class="display">
+        <p class="inp-p text-white">2nd edition</p>
+        <input type="text" class="inp" id="display"/>
+      </div>
+      <div class="calculatorHead">
+        <div class="calc">
+          <div class="calculator-head">
+            <div class="shift">
+              <p class="round-p me-3">SHIFT</p>
+              <button class="round-btn" onclick="btnShift()"></button>
+            </div>
+            <div class="shift">
+              <p class="round-pu">ALPHA</p>
+              <button class="round-btn" onclick="btnAlpha()"></button>
+            </div>
+          </div>
+          <div class="calcMiddle1">
+            <div class="Middle1 me-2">
+              <p class="round-p">	&#247;R</p>
+              <button class="middle-btn right" onclick="btnAbs()">Abs</button>
+            </div>
+            <div class="Middle1">
+              <p class="round-pu">:</p>
+              <button class="middle-btn left" onclick="btnXThree()">X^3</button>
+            </div>
+          </div>
+        </div>
+        <div class="calculator-center">
+          <button class="center-btn"> &#8855;</button>
+        </div>
+        <div class="calc">
+          <div class="calculator-head">
+            <div class="shift">
+              <p class="round-p">MSETUP</p>
+              <button class="round-btn ms-2" onclick="btnMsetup()"></button>
+            </div>
+            <div class="shift">
+              <p class="round-p">NO</p>
+              <button class="round-btn" onclick="btnOn()"></button>
+            </div>
+          </div>
+          <div class="calcMiddle1">
+            <div class="Middle1 me-2">
+              <p class="round-p">X!</p>
+              <button class="middle-btn right" onclick="btnXone()">X^-1</button>
+            </div>
+            <div class="Middle1">
+              <p class="round-p">.</p>
+              <button class="middle-btn left" onclick="btnLogSquare()">log.^</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="calcMiddle2">
+        <div class="calcMiddle1">
+          <div class="Middle1 me-2">
+            <p class="round-p">a&#247;b</p>
+            <button class="middle-btn" onclick="btnADB()">A&#247;B</button>
+          </div>
+          <div class="Middle1">
+            <p class="round-pu">&#8731;</p>
+            <button class="middle-btn" onclick="btnCubeRoot()">&#8731;</button>
+          </div>
+        </div>
+        <div class="calcMiddle1">
+          <div class="Middle1 me-2">
+            <p class="round-p">.</p>
+            <button class="middle-btn" onclick="btnXsquare()">X^2</button>
+          </div>
+          <div class="Middle1">
+            <p class="round-pu">a^b</p>
+            <button class="middle-btn" onclick="btnAsquareB()">X^A</button>
+          </div>
+        </div>
+        <div class="calcMiddle1">
+          <div class="Middle1 me-2">
+            <p class="round-p">10^a</p>
+            <button class="middle-btn" onclick="btnLogBase()">log</button>
+          </div>
+          <div class="Middle1">
+            <p class="round-pu">e^a</p>
+            <button class="middle-btn" onclick="btnIn()">In</button>
+          </div>
+        </div>
+      </div>
+      <div class="calcMiddle2">
+        <div class="calcMiddle1">
+          <div class="Middle1 me-2">
+            <p class="round-pu">A</p>
+            <button class="middle-btn" onclick="btnAA()">( - )</button>
+          </div>
+          <div class="Middle1">
+            <p class="round-p">FACT B</p>
+            <button class="middle-btn" onclick="btnAB()">o"""</button>
+          </div>
+        </div>
+        <div class="calcMiddle1">
+          <div class="Middle1 me-2">
+            <p class="round-p">C</p>
+            <button class="middle-btn" onclick="btnAC()">hyp</button>
+          </div>
+          <div class="Middle1">
+            <p class="round-pu">sin^-1</p>
+            <button class="middle-btn" onclick="btnAD()">sin</button>
+          </div>
+        </div>
+        <div class="calcMiddle1">
+          <div class="Middle1 me-2">
+            <p class="round-p">cos^-1</p>
+            <button class="middle-btn" onclick="btnAE()">cos</button>
+          </div>
+          <div class="Middle1">
+            <p class="round-pu">tan^-1</p>
+            <button class="middle-btn" onclick="btnAF()">tan</button>
+          </div>
+        </div>
+      </div>
+      <div class="calcMiddle2">
+        <div class="calcMiddle1">
+          <div class="Middle1 me-2">
+            <p class="round-p">STO</p>
+            <button class="middle-btn bL" onclick="btnAG()">RCL</button>
+          </div>
+          <div class="Middle1">
+            <p class="round-pu"><--</p>
+            <button class="middle-btn" onclick="btnAH()">ENG</button>
+          </div>
+        </div>
+        <div class="calcMiddle1">
+          <div class="Middle1 me-2">
+            <p class="round-p">%</p>
+            <button class="middle-btn" onclick="btnAI()">(</button>
+          </div>
+          <div class="Middle1">
+            <p class="round-p">'' X</p>
+            <button class="middle-btn" onclick="btnAJ()">)</button>
+          </div>
+        </div>
+        <div class="calcMiddle1">
+          <div class="Middle1 me-2">
+            <p class="round-p">a/b-d/c</p>
+            <button class="middle-btn" onclick="btnAK()">S<=>D</button>
+          </div>
+          <div class="Middle1">
+            <p class="round-pu">M- M</p>
+            <button class="middle-btn bR" onclick="btnAL()">M+</button>
+          </div>
+        </div>
+      </div>
+      <div class="mainDis" id="mainDis">
+      <div class="numDis d-flex">
+        <div class="numDis-item">
+          <p class="round-p d-flex m-0">.</p>
+          <input type="button" value="7" class="numDis-inp right" id="sciItem" onclick="btnSeven()">
+        </div>
+        <div class="numDis-item">
+          <p class="round-p d-flex m-0">.</p>
+          <input type="button" value="8" class="numDis-inp" id="sciItem" onclick="btnEight()">
+        </div>
+        <div class="numDis-item">
+          <p class="round-p d-flex m-0">CLR</p>
+          <input type="button" value="9" class="numDis-inp" id="sciItem" onclick="btnNine()">
+        </div>
+        <div class="numDis-item">
+          <p class="round-pu d-flex m-0">INS</p>
+          <input type="button" value="DEL" class="numDis-inp green" id="sciItem" onclick="btnDel()">
+        </div>
+        <div class="numDis-item">
+          <p class="round-p d-flex m-0">OFF</p>
+          <input type="button" value="AC" class="numDis-inp left green" id="sciItem" onclick="btnAc()">
+        </div>
+      </div>
+      <div class="numDis d-flex">
+        <div class="numDis-item">
+          <p class="round-p d-flex m-0">.</p>
+          <input type="button" value="4" class="numDis-inp" id="sciItem" onclick="btnFour()">
+        </div>
+        <div class="numDis-item">
+          <p class="round-p d-flex m-0">.</p>
+          <input type="button" value="5" class="numDis-inp" id="sciItem" onclick="btnFive()">
+        </div>
+        <div class="numDis-item">
+          <p class="round-p d-flex m-0">.</p>
+          <input type="button" value="6" class="numDis-inp" id="sciItem" onclick="btnSix()">
+        </div>
+        <div class="numDis-item">
+          <p class="round-pu d-flex m-0">nPr GCD</p>
+          <input type="button" value="X" class="numDis-inp" id="sciItem" onclick="btnX()">
+        </div>
+        <div class="numDis-item">
+          <p class="round-p d-flex m-0">nCr LCM</p>
+          <input type="button" value="/" class="numDis-inp" id="sciItem" onclick="btnDivide()">
+        </div>
+      </div>
+      <div class="numDis d-flex">
+        <div class="numDis-item">
+          <p class="round-p d-flex m-0">[STAT]</p>
+          <input type="button" value="1" class="numDis-inp" id="sciItem" onclick="btnOne()">
+        </div>
+        <div class="numDis-item">
+          <p class="round-p d-flex m-0">.</p>
+          <input type="button" value="2" class="numDis-inp" id="sciItem" onclick="btnTwo()">
+        </div>
+        <div class="numDis-item">
+          <p class="round-p d-flex m-0">.</p>
+          <input type="button" value="3" class="numDis-inp" id="sciItem" onclick="btnThree()">
+        </div>
+        <div class="numDis-item">
+          <p class="round-pu d-flex m-0">Pol Int</p>
+          <input type="button" value="+" class="numDis-inp" id="sciItem" onclick="btnPlus()">
+        </div>
+        <div class="numDis-item">
+          <p class="round-p d-flex m-0">Rec Intg</p>
+          <input type="button" value="-" class="numDis-inp" id="sciItem" onclick="btnSubtract()">
+        </div>
+      </div>
+      <div class="numDis d-flex">
+        <div class="numDis-item">
+          <p class="round-p d-flex m-0">Rnd</p>
+          <input type="button" value="0" class="numDis-inp bL" id="sciItem" onclick="btnZero()">
+        </div>
+        <div class="numDis-item">
+          <p class="round-pu d-flex m-0">Ran# Int</p>
+          <input type="button" value="." class="numDis-inp" id="sciItem" onclick="btnDot()">
+        </div>
+        <div class="numDis-item">
+          <p class="round-p d-flex m-0">22/7 e</p>
+          <input type="button" value="x10" class="numDis-inp" id="sciItem" onclick="btnXten()">
+        </div>
+        <div class="numDis-item">
+          <p class="round-p d-flex m-0">DRG Pre</p>
+          <input type="button" value="Ans" class="numDis-inp" id="sciItem" onclick="btnAns()">
+        </div>
+        <div class="numDis-item">
+          <p class="round-pu d-flex m-0">.</p>
+          <input type="button" value="=" class="numDis-inp bR" id="sciItem" onclick="btnEqual()">
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <script src="/main.js"></script>
+  </body>
+</html>
